@@ -135,13 +135,13 @@ class BankUI extends PluginBase implements Listener{
             }
         });
 
-        $form->setTitle("§lBank Menu");
-        $form->setContent("Balance: $" . $this->getMoney($player->getName()));
-        $form->addButton("§lWithdraw Money\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
-        $form->addButton("§lDeposit Money\n§r§dClick to deposit...",0,"textures/items/map_filled");
-        $form->addButton("§lTransfer Money\n§r§dClick to transfer...",0,"textures/ui/FriendsIcon");
-        $form->addButton("§lTransactions\n§r§dClick to open...",0,"textures/ui/lock_color");
-        $form->addButton("§l§cEXIT\n§r§dClick to close...",0,"textures/ui/cancel");
+        $form->setTitle("§l§aBank Menu");
+        $form->setContent("§bBalance: $" . $this->getMoney($player->getName()));
+        $form->addButton("§dWithdraw Money\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
+        $form->addButton("§aDeposit Money\n§r§dClick to deposit...",0,"textures/items/map_filled");
+        $form->addButton("§cTransfer Money\n§r§dClick to transfer...",0,"textures/ui/FriendsIcon");
+        $form->addButton("§dTransactions\n§r§dClick to open...",0,"textures/ui/lock_color");
+        $form->addButton("§a§cEXIT\n§r§dClick to close...",0,"textures/ui/cancel");
         $form->sendtoPlayer($player);
         return $form;
     }
@@ -213,16 +213,16 @@ class BankUI extends PluginBase implements Listener{
             }
         });
 
-        $form->setTitle("§l" . $target . "'s Bank");;
-        $form->addLabel("Balance: $" . $this->getMoney($target));
+        $form->setTitle("§a" . $target . "'s Bank");;
+        $form->addLabel("§bBalance: $" . $this->getMoney($target));
         if ($action == 0){
-            $form->addInput("§rEnter amount to give", "100000");
+            $form->addInput("§cEnter amount to give", "100000");
         }
         if ($action == 1){
-            $form->addInput("§rEnter amount to take", "100000");
+            $form->addInput("§dEnter amount to take", "100000");
         }
         if ($action == 2){
-            $form->addInput("§rEnter amount to set", "100000");
+            $form->addInput("§eEnter amount to set", "100000");
         }
         $form->sendtoPlayer($player);
         return $form;
@@ -262,12 +262,12 @@ class BankUI extends PluginBase implements Listener{
             }
         });
 
-        $form->setTitle("§lWithdraw Menu");
-        $form->setContent("Balance: $" . $this->getMoney($player->getName()));
-        $form->addButton("§lWithdraw All\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
-        $form->addButton("§lWithdraw Half\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
-        $form->addButton("§lWithdraw Custom\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
-        $form->addButton("§l§cEXIT\n§r§dClick to close...",0,"textures/ui/cancel");
+        $form->setTitle("§a§lWithdraw Menu");
+        $form->setContent("§bBalance: $" . $this->getMoney($player->getName()));
+        $form->addButton("§aWithdraw All\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
+        $form->addButton("§dWithdraw Half\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
+        $form->addButton("§eWithdraw Custom\n§r§dClick to withdraw...",0,"textures/ui/icon_book_writable");
+        $form->addButton("§cEXIT\n§r§dClick to close...",0,"textures/ui/cancel");
         $form->sendtoPlayer($player);
         return $form;
     }
@@ -302,9 +302,9 @@ class BankUI extends PluginBase implements Listener{
             $this->takeMoney($player->getName(), $data[1]);
         });
 
-        $form->setTitle("§lWithdraw Menu");
-        $form->addLabel("Balance: $" . $this->getMoney($player->getName()));
-        $form->addInput("§rEnter amount to withdraw", "100000");
+        $form->setTitle("§l§aWithdraw Menu");
+        $form->addLabel("§cBalance: $" . $this->getMoney($player->getName()));
+        $form->addInput("§eEnter amount to withdraw", "100000");
         $form->sendtoPlayer($player);
         return $form;
     }
